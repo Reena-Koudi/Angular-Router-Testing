@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TakeAPicComponent } from './take-apic.component';
+import { TakeAPicComponent } from './take-a-pic.component';
 
 describe('TakeAPicComponent', () => {
   let component: TakeAPicComponent;
