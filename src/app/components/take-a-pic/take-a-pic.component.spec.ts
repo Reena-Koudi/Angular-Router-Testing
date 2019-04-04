@@ -23,8 +23,8 @@ describe('TakeAPicComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should contain "take-apic works!"', () => {
-    const bannerElement: HTMLElement = fixture.nativeElement;
-    expect(bannerElement.textContent).toContain('take-apic works!');
+  it('should contain "take-a-pic works!"', () => {
+    const takeapicElement: HTMLElement = fixture.nativeElement;
+    expect(takeapicElement.textContent).toContain('take-a-pic works!');
   });
 });

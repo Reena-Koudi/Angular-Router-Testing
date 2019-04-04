@@ -24,7 +24,7 @@ describe('TryOnComponent', () => {
   });
 
   it('should contain "try-on works!"', () => {
-    const bannerElement: HTMLElement = fixture.nativeElement;
-    expect(bannerElement.textContent).toContain('try-on works!');
+    const tryonElement: HTMLElement = fixture.nativeElement;
+    expect(tryonElement.textContent).toContain('try-on works!');
   });
 });
