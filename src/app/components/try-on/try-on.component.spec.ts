@@ -34,7 +34,7 @@ describe('TryOnComponent', () => {
     expect(tryonElement.textContent).toContain('try-on works!');
   });
 
-  it('should navigate to /take-a-pic path on button click', () => {
+  it('should navigate to /takeapic path on button click', () => {
     const location = TestBed.get(Location);
     const linkDes = fixture.debugElement.queryAll(By.css('button'));
     const nativeButton: HTMLButtonElement = linkDes[0].nativeElement;

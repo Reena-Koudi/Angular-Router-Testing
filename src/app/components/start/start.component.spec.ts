@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { By } from '@angular/platform-browser';
+import { Location } from '@angular/common';
 import { StartComponent } from './start.component';
+import { routingComponents, routes, AppRoutingModule } from '../../app-routing.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('StartComponent', () => {
   let component: StartComponent;
@@ -8,7 +11,10 @@ describe('StartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StartComponent ]
+      imports: [
+        RouterTestingModule.withRoutes(routes),
+      ],
+      declarations: [ StartComponent, routingComponents ]
     })
     .compileComponents();
   }));
@@ -26,5 +32,16 @@ describe('StartComponent', () => {
   it('should contain "start works!"', () => {
     const startElement: HTMLElement = fixture.nativeElement;
     expect(startElement.textContent).toContain('start works!');
+  });
+
+  it('should navigate to /tryon path on button click', () => {
+    const location = TestBed.get(Location);
+    const linkDes = fixture.debugElement.queryAll(By.css('button'));
+    const nativeButton: HTMLButtonElement = linkDes[0].nativeElement;
+    nativeButton.click();
+    fixture.detectChanges();
+    fixture.whenStable().then( () => {
+      expect(location.path()).toBe('/tryon');
+    });
   });
 });
